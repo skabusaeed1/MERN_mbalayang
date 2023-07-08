@@ -3,7 +3,6 @@ const cors = require("cors");
 require("dotenv").config();
 const { connection } = require("./configs/db");
 const { userController } = require("./routes/user.router");
-// const { employeeController } = require("./routes/employee.router");
 const { authentication } = require("./middleware/authentication");
 
 const app = express();
@@ -16,7 +15,7 @@ app.use(cors());
 
 app.use("/user", userController);
 app.use(authentication);
-// app.use("/hotel", hotelController);
+
 
 const port = process.env.PORT;
 
